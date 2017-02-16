@@ -1,0 +1,28 @@
+Spring CRUD MVC Structure
+1.IDEA, MySQL WorkBench, TomCat 8, Spring, Hibernate, Maven
+2. New Project - Spring MVC (Maven archetype webapp) - application server (TomCat)
+пробуем запустить
+3. БД - новая БД - utf8general_ci - BOOKMANAGER (BOOKS (ID, BOOK_TITLE, BOOK_AUTHOR...))
+4.Настраиваем pom.xml (Spring, hibernate, commons-dbcp,логгирование, тестирование, sql) - проверяем
+Model
+5. Book (java.persistance.*), Hibernate mapping
+Dao
+6. interface Bookdao, class BookDaoImpl (Logger, sessionFactory,setter)
+Service
+7. BookService (повторяем BookDao), BookServiceImpl (@Service,bookDao,setter,@Transactional) - и вызываем метод соответствующий нашему Dao
+8.mvc-dispatcher-servlet.xml(базовый пакет, информация о БД, bean sessionFactory, и далее стандартно)
+9.web.xml(Стандартный, можно поменять название)
+Controller
+10.BookController(@Controller,bookService,@Autowired,@Qualifier,setter)Страницы - @ReauqestMapping
+Страницы (удалим базовый контроллер, и удалим нашу базовую страницу)
+11. index.jsp
+12. в папке pages создаем страницы books.jsp, bookdata.jsp.
+13. добавим стили
+14.ссылка на главную страницу, вывод, добавим штучки для тегов
+15. Выводим список
+16. Созданм форму для добавления информации по книге
+17. Страница для отображения каждой конкретной книги
+18. Можно сказать наше приложение готово
+19. Сделаем что бы мы согли открывать информацию по кжадой конкретной книге
+Добавим ссылку
+
